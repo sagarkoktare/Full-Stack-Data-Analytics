@@ -1,0 +1,11 @@
+% Complete = Divide([Tasks Completed],[Number Of Tasks])
+
+% Number of Tasks = Divide([Number Of Tasks],[Number Of Tasks])
+
+Number Of Tasks = DISTINCTCOUNT(Tasks[Task ID])
+
+Tasks Completed = CALCULATE([Number Of Tasks], Filter(Tasks, Tasks[Progress]="Completed"))+0
+
+Tasks In Progress = CALCULATE([Number Of Tasks], Filter(Tasks, Tasks[Progress]="In Progress"))+0
+
+Tasks Not started = CALCULATE([Number Of Tasks], Filter(Tasks, Tasks[Progress]="Not started"))+0
